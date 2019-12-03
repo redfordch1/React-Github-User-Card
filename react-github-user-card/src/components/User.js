@@ -9,13 +9,21 @@ class User extends React.Component {
 
 	componentDidMount() {
 		Axios.get("https://api.github.com/users/redfordch1").then((response) => {
-			console.log(response);
+			console.log(response.data);
 			this.setState({
 				name: response.data.name,
 				img: response.data.avatar_url,
 				bio: response.data.bio
 			});
 		});
+	}
+
+	render() {
+		return (
+			<div>
+				<UserCard user={this.state.name} img={this.state.img} bio={this.state.bio} />
+			</div>
+		);
 	}
 }
 
