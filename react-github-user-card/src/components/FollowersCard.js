@@ -2,9 +2,11 @@ import React from "react";
 
 const FollowersCard = ({ followers, img }) => {
 	return (
-		<div className="Card">
-			<img src={img} alt="user" />
-			<p>Name: {followers}</p>
+		<div className="Follow_Card">
+			<img className="img1" src={img} alt="user" />
+			<div>
+				<p>Name: {followers}</p>
+			</div>
 		</div>
 	);
 };

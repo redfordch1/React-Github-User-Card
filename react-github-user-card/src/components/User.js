@@ -13,7 +13,8 @@ class User extends React.Component {
 			this.setState({
 				name: response.data.name,
 				img: response.data.avatar_url,
-				bio: response.data.bio
+				bio: response.data.bio,
+				location: response.data.location
 			});
 		});
 	}
@@ -21,7 +22,12 @@ class User extends React.Component {
 	render() {
 		return (
 			<div>
-				<UserCard user={this.state.name} img={this.state.img} bio={this.state.bio} />
+				<UserCard
+					user={this.state.name}
+					img={this.state.img}
+					bio={this.state.bio}
+					location={this.state.location}
+				/>
 			</div>
 		);
 	}
